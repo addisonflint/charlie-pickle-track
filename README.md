@@ -7,7 +7,8 @@
 ## 👤 Authorship & Attribution
 * **Author:** [Addison Flint](https://github.com/addisonflint)
 * **Project Iteration:** ALFA Milestone
-* **Resources Used:** * Normalize.css: [v8.0.1 CDN Link](https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css)
+* **Resources Used:**
+  * Normalize.css: [v8.0.1 CDN Link](https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css)
   * Bootstrap: [v5.3.3 CDN Link](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css)
   * Bootstrap Icons: [v1.11.3 CDN Link](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css)
   * jQuery: [v3.7.1 CDN Link](https://code.jquery.com/jquery-3.7.1.min.js)
