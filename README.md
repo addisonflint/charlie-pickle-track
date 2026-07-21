@@ -1,45 +1,45 @@
-# 🏓 PickleTrack: Sports Performance App
-
-> A basic framework for logging match scores and tracking team stats.
+# 🏓 PickleTrack: Match & Stat Vault
+> "A polished, JSON-driven application for logging collegiate pickleball match performance, tracking score differentials, and syncing telemetry."
 
 ---
 
 ## 👤 Authorship & Attribution
-* **Author:** [Addison Flint](https://github.com/addisonflint)
-* **Project Iteration:** ALFA Milestone
-* **Resources Used:**
-  * Normalize.css: [v8.0.1 CDN Link](https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css)
-  * Bootstrap: [v5.3.3 CDN Link](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css)
-  * Bootstrap Icons: [v1.11.3 CDN Link](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css)
-  * jQuery: [v3.7.1 CDN Link](https://code.jquery.com/jquery-3.7.1.min.js)
-* **AI Prompts Used:** "Help me come up with a simple sports tracking concept that uses numerical calculations, and give me a basic 3-page template structure."
+* **Author:** Addison Flint
+* **GitHub Profile:** [https://github.com/addisonflint](https://github.com/addisonflint)
+* **Version:** 2.0.0 (Charlie Milestone)
+* **Date:** July 2026
+* **ALFA Branch Link:** [ALFA Version Branch](https://github.com/addisonflint/charlie-pickle-track/tree/alfa)
+* **Early Concept Wireframe:** [Wireframe Wiki Page](https://github.com/addisonflint/charlie-pickle-track/wiki/charlie%E2%80%90wireframe)
 
 ---
 
-## 📖 User Story
-* **As a** competitive collegiate pickleball player,
-* **I want to** type in my match dates and final scores after a game,
-* **so that** I can keep an organized log of my stats and calculate point differences automatically.
+## 📖 User Story & Narrative
+> **As a** competitive collegiate pickleball player,
+> **I want to** store all my match results, filter by opponent or match category, and edit notes inline,
+> **So that** I can analyze performance patterns across seasons and sync data across devices.
 
 ---
 
-## 🛠️ Tech Stack & Libraries
-* **HTML5:** Standard layout and page setup
-* **Normalize.css (v8.0.1):** Keeps styling consistent across different browsers
-* **Bootstrap (v5.3.3):** Used for standard layout grids and form controls
-* **Bootstrap Icons (v1.11.3):** Added for simple UI icons
-* **jQuery (v3.7.1):** Handles form submissions and console logging
+## 🛠️ Stack & Resources
+* **Libraries:** Normalize.css, Bootstrap v5.3.3, Bootstrap Icons, jQuery v3.7.1, jQuery UI, Google Fonts (`Plus Jakarta Sans`)
+* **APIs & Storage:** Fetch API (AuthN Login), `localStorage`, `sessionStorage`
 
 ---
 
-## 📂 Directory Structure
-```text
-Dev-Project-Addison/
-├── css/
-│   └── styles.css
-├── js/
-│   └── main.js
-├── index.html
-├── form.html
-├── admin.html
-└── README.md
+## 💻 Code Snippet & Explanation
+
+```javascript
+// Function allowing inline editing on contenteditable DOM elements and updating sessionStorage
+$('.save-card-btn').on('click', function() {
+    const cardElement = $(this).closest('.card-item');
+    const updatedMatch = {
+        id: cardElement.data('id'),
+        opponent: cardElement.find('[data-field="opponent"]').text(),
+        date: cardElement.find('[data-field="date"]').text(),
+        yourScore: parseInt(cardElement.find('[data-field="yourScore"]').text()),
+        opponentScore: parseInt(cardElement.find('[data-field="opponentScore"]').text())
+    };
+    
+    // Persist to session storage
+    sessionStorage.setItem('matchData', JSON.stringify(updatedMatch));
+});

@@ -1,8 +1,36 @@
 body {
-    padding-top: 20px;
-    padding-bottom: 40px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #212529;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-h1 {
-    color: #333333;
+.footer {
+    margin-top: auto;
+}
+
+.card-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.favorite-card {
+    border: 2px solid #ffc107 !important;
+    background-color: #fffdf5;
+}
+
+[contenteditable="true"] {
+    outline: 1px dashed #0d6efd;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+[contenteditable="true"]:focus {
+    outline: 2px solid #198754;
+    background-color: #f8f9fa;
 }
